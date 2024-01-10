@@ -91,7 +91,7 @@ Spotify, la célèbre plateforme de streaming musical, fait une utilisation int�
 Disponible sur leur application, cette expérience personnalisée appelée “Spotify Wrapped” remporte chaque année un franc succès auprès de leurs utilisateurs. Dans une vidéo sur un format de Story Instagram, chacun peut découvrir et partager ses artistes et ses genres favoris ainsi que ses statistiques d’écoute sur l’année.
 De quoi mieux comprendre leurs préférences musicales et ce qui les a le plus portés pendant les derniers mois. Ici, Spotify met le Data Storytelling au service à la fois de l’éducation et du divertissement de ses fans. Et cerise sur le gâteau, Spotify leur propose ensuite une playlist personnalisée de leurs titres les plus écoutés de l’année
 
-
+![Image](./img/FTR_Experience_Header-scaled.jpg)
 
 src : https://www.toucantoco.com/blog/data-storytelling-definition
 https://solutions-business-intelligence.fr/le-data-storytelling-en-5-exemples-inspirants/
