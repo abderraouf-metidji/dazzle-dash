@@ -1,42 +1,59 @@
-# Import packages
-from dash import Dash, html, dash_table, dcc, callback, Output, Input
 import pandas as pd
-import plotly.express as px
+from dash import Dash
+import layout
+import callbacks
 
-# Incorporate data
+# Read the csv file
 df = pd.read_csv('data/life_expectancy_data.csv')
 
-df_specific_year = df[df['Year'] == 2015]
+# Get unique years
+years = df['Year'].unique()
 
-# Initialize the app
-app = Dash(__name__)
+# Define the options for the first dropdown
+variables_first_dropdown = [
+    {'label': 'Country', 'value': 'Country'},
+    {'label': 'Status', 'value': 'Status'},
+    {'label': 'Life expectancy', 'value': 'Life expectancy'},
+    {'label': 'Adult Mortality', 'value': 'Adult Mortality'},
+    {'label': 'Infant deaths', 'value': 'Infant deaths'},
+    {'label': 'Alcohol', 'value': 'Alcohol'},
+    {'label': 'Percentage expenditure', 'value': 'Percentage expenditure'},
+    {'label': 'Hepatitis B', 'value': 'Hepatitis B'},
+    {'label': 'Measles', 'value': 'Measles'},
+    {'label': 'BMI', 'value': 'BMI'},
+    {'label': 'Under-five deaths', 'value': 'Under-five deaths'},
+    {'label': 'Polio', 'value': 'Polio'},
+    {'label': 'Total expenditure', 'value': 'Total expenditure'},
+    {'label': 'Diphtheria', 'value': 'Diphtheria'},
+    {'label': 'HIV/AIDS', 'value': 'HIV/AIDS'},
+    {'label': 'GDP', 'value': 'GDP'},
+    {'label': 'Population', 'value': 'Population'},
+    {'label': 'Thinness 1-19 years', 'value': 'Thinness 1-19 years'},
+    {'label': 'Thinness 5-9 years', 'value': 'Thinness 5-9 years'},
+    {'label': 'Income composition of resources', 'value': 'Income composition of resources'},
+    {'label': 'Schooling', 'value': 'Schooling'}
+]
 
-# App layout
-app.layout = html.Div([
-    html.Div(children='Life expectancy'),
-    html.Hr(),
-    dcc.RadioItems(
-        id='controls-and-radio-item',
-        options=[
-            {'label': 'Life expectancy', 'value': 'Life expectancy'},
-            {'label': 'GDP', 'value': 'GDP'},
-            {'label': 'Population', 'value': 'Population'},
-            {'label': 'HIV/AIDS', 'value': 'HIV/AIDS'}
-        ],
-        value='Life expectancy'
-    ),
-    dash_table.DataTable(data=df.to_dict('records'), page_size=10),
-    dcc.Graph(figure={}, id='controls-and-graph')
-])
+# Define the options for the second dropdown
+variables_second_dropdown = [
+    {'label': 'GDP vs Percentage expenditure', 'value': 'GDP vs Percentage expenditure'},
+    {'label': 'Life expectancy vs GDP', 'value': 'Life expectancy vs GDP'},
+    {'label': 'Life expectancy vs Schooling', 'value': 'Life expectancy vs Schooling'},
+    {'label': 'Life expectancy vs Percentage expenditure', 'value': 'Life expectancy vs Percentage expenditure'},
+    {'label': 'Life expectancy vs BMI', 'value': 'Life expectancy vs BMI'},
+    {'label': 'Life expectancy vs Polio', 'value': 'Life expectancy vs Polio'},
+    {'label': 'Life expectancy vs Alcohol', 'value': 'Life expectancy vs Alcohol'},
+    {'label': 'Life expectancy vs Population', 'value': 'Life expectancy vs Population'}
+]
 
-@app.callback(
-    Output(component_id='controls-and-graph', component_property='figure'),
-    Input(component_id='controls-and-radio-item', component_property='value')
-)
+# Create the Dash app
+app = Dash(__name__, external_stylesheets=['https://codepen.io/chriddyp/pen/bWLwgP.css'])
 
-def update_graph(col_chosen):
-    fig = px.histogram(df_specific_year, x=col_chosen)
-    return fig
+# Generate the layout using the layout module
+app.layout = layout.generate_layout(df, years, variables_first_dropdown, variables_second_dropdown)
+
+# Register the callbacks using the callbacks module
+callbacks.register_callbacks(app, df)
 
 # Run the app
 if __name__ == '__main__':
