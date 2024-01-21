@@ -110,7 +110,27 @@ Une fois l'analyse terminée nous mettons en place une application Dash afin de 
 
 ## Données utilisées
 
+Caractéristiques du Jeu de Données :
 
+Le jeu de données présente une diversité de variables, mêlant des données quantitatives et qualitatives. Les données quantitatives comprennent des indicateurs tels que l'espérance de vie, les décès d'enfants, la consommation d'alcool, les dépenses en pourcentage du PIB et le PIB lui-même. Les données qualitatives incluent des informations sur le pays, le statut du pays, et d'autres indicateurs de santé.
+Données Manquantes :
+
+Plusieurs variables, notamment l'hépatite B, les dépenses totales, le PIB, la population, la composition des revenus des ressources et la scolarisation, présentent des valeurs manquantes. Les pourcentages de données manquantes varient, allant de 5,55% à 22,19%. Une réflexion sur le traitement des données manquantes a été effectuée, et malgré différentes options envisageables, la décision a été prise de ne pas remplacer les données manquantes dans ce contexte.
+Analyse Descriptive de l'Espérance de Vie (2015) :
+
+    Distribution Bimodale : La distribution de l'espérance de vie est fortement bimodale, avec des modalités autour de 70 ans et 50 ans, indiquant une diversité marquée dans les données.
+
+    Statistiques Clés : La médiane de l'espérance de vie est de 71,6 ans. Les pays avec les espérances de vie les plus longues sont le Japon, l'Islande et la Suisse, tandis que le Tchad, la Somalie et le Malawi affichent les espérances de vie les plus courtes.
+
+    Corrélations : L'espérance de vie présente des corrélations significatives avec d'autres variables quantitatives telles que le PIB par habitant (corrélation positive), la mortalité infantile (corrélation négative) et la proportion de la population ayant accès à l'eau potable (corrélation positive).
+
+Matrice de Corrélation :
+
+La matrice de corrélation révèle des relations intéressantes entre certaines variables. Notamment, une corrélation parfaite entre les décès d'enfants de moins de cinq ans et les décès infantiles, ce qui est cohérent. De plus, des corrélations significatives sont observées entre les dépenses en pourcentage du PIB, le PIB, la composition des ressources du revenu, la scolarisation et l'espérance de vie.
+Conclusions :
+
+L'analyse descriptive met en lumière la complexité des facteurs influençant l'espérance de vie. Les corrélations identifiées suggèrent des liens importants avec le développement économique, la santé publique et l'accès aux ressources. Cependant, la présence de données manquantes a conduit à la décision de ne pas remplacer ces valeurs dans le cadre de cette analyse. Ces observations fournissent un aperçu initial pour orienter l'exploration et la compréhension plus approfondies du jeu de données.
 
 ## Résultats d'analyse / Conlusion
 
+L'analyse du jeu de données sur l'espérance de vie révèle une distribution bimodale marquée par des différences significatives entre les pays. Les corrélations mettent en lumière l'impact du développement économique, de la santé infantile et de l'accès à l'eau potable sur l'espérance de vie. Cependant, les données manquantes, non traitées pour des raisons de complexité et d'échantillonnage, soulignent la nécessité d'une approche plus approfondie. Cette analyse initiale offre ainsi une perspective riche, mais suggère une exploration plus détaillée pour une compréhension complète des facteurs influençant la longévité.
