@@ -116,6 +116,7 @@ Le jeu de données présente une diversité de variables, mêlant des données q
 Données Manquantes :
 
 Plusieurs variables, notamment l'hépatite B, les dépenses totales, le PIB, la population, la composition des revenus des ressources et la scolarisation, présentent des valeurs manquantes. Les pourcentages de données manquantes varient, allant de 5,55% à 22,19%. Une réflexion sur le traitement des données manquantes a été effectuée, et malgré différentes options envisageables, la décision a été prise de ne pas remplacer les données manquantes dans ce contexte.
+
 Analyse Descriptive de l'Espérance de Vie (2015) :
 
     Distribution Bimodale : La distribution de l'espérance de vie est fortement bimodale, avec des modalités autour de 70 ans et 50 ans, indiquant une diversité marquée dans les données.
